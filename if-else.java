@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         /*
+        תרגיל 1
         Scanner console = new Scanner(System.in);
         System.out.println("Please enter a number: ");
         double x = console.nextDouble();
@@ -23,6 +24,7 @@ public class Main {
         System.out.println(y);
         */
         /*
+        תרגיל 2
          Scanner console = new Scanner(System.in);
         
         System.out.println("Please enter the first x coordinate: ");
@@ -46,6 +48,7 @@ public class Main {
         */
         
         /*
+        תרגיל 3
         Scanner console = new Scanner(System.in);
         
         System.out.println("Please enter number ");
@@ -57,23 +60,7 @@ public class Main {
         else
         System.out.println("negative");
     */
-        
-        Scanner console = new Scanner(System.in);
-        String x;
-        String y;
-        
-        System.out.println("Please enter a char ");
-        x = console.next();
-        
-        System.out.println("Please enter a char ");
-        y = console.next();
-        
-        System.out.println("Please enter a char ");
-        x1 = console.next();
-        
-        System.out.println("Please enter a char ");
-        y1 = console.next();
-        
+       
         
     
     
