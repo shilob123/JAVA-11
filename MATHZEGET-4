@@ -1,1 +1,132 @@
+// תרגיל 1
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        String str;
+        String str1;
+        String str2;
+        
+        Scanner console = new Scanner(System.in);
+        
+        System.out.println("enter your name");
+        str = console.next();
+        
+        System.out.println("enter your name");
+        str1 = console.next();
+        
+         System.out.println("enter your name");
+        str2 = console.next();
+        
+        if ((str.compareTo(str1)>0) && (str.compareTo(str2)>0) && (str1.compareTo(str2)>0) )
+        {
+             System.out.println(str);
+              System.out.println(str1);
+               System.out.println(str2);
+        }
+        else
+           {
+               if ((str1.compareTo(str2)>0) && (str1.compareTo(str)>0) && (str.compareTo(str2)>0))
+                {
+                System.out.println(str1);
+                System.out.println(str);
+                System.out.println(str2);
+                }
+            else
+            {
+                if ((str2.compareTo(str1)>0) && (str2.compareTo(str)>0) && (str1.compareTo(str)>0))
+                {
+                    System.out.println(str2);
+                    System.out.println(str1);
+                    System.out.println(str);  
+                }
+                else
+                {
+                   if ((str1.compareTo(str2)>0) && (str1.compareTo(str)>0) && (str.compareTo(str2)>0))
+                    {
+                        System.out.println(str1);
+                        System.out.println(str);
+                        System.out.println(str2);
+                    } 
+                }
+                    
+            }
+                
+           }
+   }
+    
+    
+}
+
+
+// תרגיל 2
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+      String str;
+      Scanner console = new Scanner(System.in);
+      System.out.println("enter string");
+      str = console.nextLine();
+      int x = str.length();
+        System.out.println(x);
+    }
+    
+    
+}
+
+// תרגיל 3
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+      String str;
+      Scanner console = new Scanner(System.in);
+      
+      System.out.println("enter string");
+      str = console.nextLine();
+      
+      char x  = str.charAt(0);
+      char x1  = str.charAt(2);
+
+      if (x == x1)
+        
+        System.out.println("TRUE");
+      else
+        System.out.println("FALSE");
+    }
+    
+    
+}
+
+// תרגיל 4
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+      String str;
+      Scanner console = new Scanner(System.in);
+      
+      System.out.println("enter string");
+      str = console.nextLine();
+
+      char x  = str.charAt(0);
+      char x1  = str.charAt(1);
+      char x2  = str.charAt(2);
+
+      System.out.print(x2);
+      System.out.print(x1);
+      System.out.print(x);
+      
+      
+      
+    }
+    
+    
+}
+
+
+
+
 
