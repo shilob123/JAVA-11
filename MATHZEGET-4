@@ -81,24 +81,26 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-      String str;
-      Scanner console = new Scanner(System.in);
-      
-      System.out.println("enter string");
-      str = console.nextLine();
-      
-      char x  = str.charAt(0);
-      char x1  = str.charAt(2);
+        String str;
+        boolean flag;
+        Scanner console = new Scanner(System.in);
 
-      if (x == x1)
+        System.out.println("Enter string");
+        str = console.nextLine();
+
+        char x = str.charAt(0);
+        char x1 = str.charAt(2);
+
+        if (x == x1) {
+            flag = true;
+        } else {
+            flag = false;
+        }
         
-        System.out.println("TRUE");
-      else
-        System.out.println("FALSE");
+        System.out.println(flag);
     }
-    
-    
 }
+
 
 // תרגיל 4
 
