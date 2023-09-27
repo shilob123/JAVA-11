@@ -131,7 +131,49 @@ public class Main {
 
 // תרגיל 5
 
+import java.util.Scanner;
 
+public class Main {
+    public static void main(String[] args) {
+      String str;
+      Scanner console = new Scanner(System.in);
+      
+      System.out.println("enter string");
+      str = console.nextLine();
+
+      char ch[] =  str.toCharArray();
+
+      if (str.length() == 4)
+      {  
+
+        char x  = str.charAt(0);
+        char x1  = str.charAt(1);
+        char x2  = str.charAt(2);
+        char x3  = str.charAt(3);
+  
+        if (x =='a' || x =='e' || x =='i' || x =='o' || x =='u')
+            ch[0] = '*';
+    
+        if (x1 =='a' || x1 =='e' || x1 =='i' || x1 =='o' || x1 =='u')
+            ch[1] = '*';
+    
+        if (x2 =='a' || x2 =='e' || x2 =='i' || x2 =='o' || x2 =='u')
+            ch[2] = '*';
+      
+        if (x3 =='a' || x3 =='e' || x3 =='i' || x3 =='o' || x3 =='u')
+           ch[3] = '*';
+        
+         
+        
+         
+      } 
+
+      str = String.valueOf(ch);
+      System.out.println(str);
+    }
+    
+    
+}
 
 
 
