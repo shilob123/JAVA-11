@@ -14,7 +14,7 @@ public class Main {
         System.out.println("enter string");
         name = console.nextLine();
 
-        f1(name); // קריאה לפונקציה f1 ישירות מהמתודה main
+        f1(name); 
 
         console.close();
     }
