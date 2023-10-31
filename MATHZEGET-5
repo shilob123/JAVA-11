@@ -1,0 +1,21 @@
+// תרגיל 1
+import java.util.Scanner;
+
+public class Main {
+
+    public static void f1(String name) {
+        System.out.println("hello " + name);
+    }
+
+    public static void main(String[] args) {
+        String name;
+        Scanner console = new Scanner(System.in);
+
+        System.out.println("enter string");
+        name = console.nextLine();
+
+        f1(name); // קריאה לפונקציה f1 ישירות מהמתודה main
+
+        console.close();
+    }
+}
