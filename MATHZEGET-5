@@ -51,3 +51,115 @@ public class Main {
     }
 }
 
+
+// תרגיל 3
+
+/*כתוב פונקציה המקבלת 2 מספרים, הפונקציה תחזיר את מכפלת המספרים. */
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void f1(int number1, int number2) {
+        int num= number1* number2;
+        System.out.println(num);
+    }
+
+    public static void main(String[] args) {
+        int number1;
+        int number2;
+        Scanner console = new Scanner(System.in);
+
+        System.out.println("Enter number: ");
+        number1 = console.nextInt();
+
+        System.out.println("Enter number: ");
+        number2 = console.nextInt();
+
+        f1(number1 , number2);
+
+        console.close();
+    }
+}
+
+
+// תרגיל 4
+
+/* כתוב פונקציה המקבלת 3 מספרים, הפונקציה תדפיס את סכומם ותחזיר את הממוצע שלהם. */
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void f1(int number1, int number2, int number3) {
+        int sum= number1 + number2 + number3;
+        double AVG = sum / 3;
+        System.out.println("the sum is: " + sum );
+        System.out.println("the AVG is: " + AVG );
+    }
+
+    public static void main(String[] args) {
+        int number1;
+        int number2;
+        int number3;
+        Scanner console = new Scanner(System.in);
+
+        System.out.println("Enter number: ");
+        number1 = console.nextInt();
+
+        System.out.println("Enter number: ");
+        number2 = console.nextInt();
+
+
+        System.out.println("Enter number: ");
+        number3 = console.nextInt();
+
+        f1(number1 , number2 , number3 );
+
+        console.close();
+    }
+}
+
+// תרגיל 6
+
+/*  כתוב פונקציה המקבלת את אורכי צלעות a ו-b של משולש ישר זווית, הפונקציה תחזיר את אורכו
+של היתר c של המשולש. */
+
+import java.util.Scanner;
+
+
+
+public class Main {
+
+    public static void f1(int a, int b) {
+      
+        double a_1= Math.pow(a,2); 
+        double b_2= Math.pow(b,2); 
+        double sum= a_1 + b_2 ;
+        double x = Math.sqrt(sum);
+        System.out.println("c = " + x );
+        
+    }
+
+    public static void main(String[] args) {
+        int a;
+        int b;
+       
+        Scanner console = new Scanner(System.in);
+
+        System.out.println("Enter number: ");
+        a = console.nextInt();
+
+        System.out.println("Enter number: ");
+        b = console.nextInt();
+
+
+        
+
+        f1(a , b  );
+
+        console.close();
+    }
+}
+
+
