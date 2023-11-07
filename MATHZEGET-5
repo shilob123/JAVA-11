@@ -1,21 +1,53 @@
 // תרגיל 1
+
+/*  כתוב פונקציה הקולטת מהמקלדת את שם התלמיד ומדפיסה את המילה שלום ולאחר מכן את שם
+התלמיד*/
+
 import java.util.Scanner;
 
 public class Main {
 
-    public static void f1(String name) {
-        System.out.println("hello " + name);
+    public static void f1() {
+        Scanner console = new Scanner(System.in);
+
+        System.out.println("Enter string:");
+        String name = console.nextLine();
+        System.out.println("Hello " + name);
+
+        console.close();
     }
 
     public static void main(String[] args) {
-        String name;
+        f1();
+    }
+}
+
+
+
+// תרגיל 2
+
+/* כתוב פונקציה המקבלת מספר שלם, הפונקציה תדפיס את מספר השלמים המתקבלים בחלוקה
+ב.5*/
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void f1(int number) {
+        int num1 = number / 5 ;
+        System.out.println(num1);
+    }
+
+    public static void main(String[] args) {
+        int number;
         Scanner console = new Scanner(System.in);
 
-        System.out.println("enter string");
-        name = console.nextLine();
+        System.out.println("Enter number: ");
+        number = console.nextInt();
 
-        f1(name); 
+        f1(number);
 
         console.close();
     }
 }
+
