@@ -33,4 +33,115 @@ public class Main {
 /* כתוב פונקציה הקולטת מהמקלדת מילים(מחרוזות) עד לקליטת המילה "enter", הפונקציה תדפיס
 את מספר המילים שנקלטו מהמקלדת(כולל enter(. */
 
+import java.util.Scanner;
+
+public class Main {
+
+    public static void f1() {
+        int sum = 0;
+        Scanner console = new Scanner(System.in);
+
+        System.out.println("Enter string:");
+        String str = console.nextLine();
+
+        while (!str.equals("enter")) {
+            System.out.println("Enter string:");
+            str = console.nextLine();
+            sum++;
+        }
+
+        System.out.println(sum);
+        console.close();
+    }
+
+    public static void main(String[] args) {
+        f1();
+    }
+}
+
+
+// תרגיל 3
+
+/* כתוב פונקציה המקבלת מספר בין 4 ספרות המהווה קוד של כרטיס אשראי. הפונקציה קולטת
+מהמשתמש את הקוד שהוא הקליד ובודקת האם הוא תקין(ביחס לקוד שהתקבל לפונקציה). במידה
+ולא היא תתן למשתמש עוד 2 ניסיונות. אם הקוד תקין הפונקציה תדפיס הודעה: "money much How "
+אחרת תדפיס "Error". השתמש בלולאת while..do. */
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void f1(int code) {
+        int attempts = 0;
+        Scanner console = new Scanner(System.in);
+
+        do {
+            System.out.println("Enter your 4-digit credit card code:");
+            int userCode = console.nextInt();
+
+            if (userCode == code) {
+                System.out.println("how much money ");
+                break;
+            } 
+            else {
+                System.out.println("Error");
+                attempts++;
+            }
+        } while (attempts < 3);
+
+        if (attempts == 3) {
+            System.out.println("Too many incorrect attempts. Card blocked.");
+        }
+
+        console.close();
+    }
+
+    public static void main(String[] args) {
+        Scanner console = new Scanner(System.in);
+
+        System.out.println("Enter number: ");
+        int code = console.nextInt();
+
+        f1(code);
+
+        console.close();
+    }
+}
+
+
+// תרגיל 4
+
+/* כתוב פונקציה המקבלת מחרוזת ומדפיסה האם היא פלינדרום. */
+
+import java.util.Scanner;
+
+public class Main {
+
+  public static void f1(String str) {
+      String reversedStr = reverseString(str);
+
+      if (str.equals(reversedStr)) {
+          System.out.println(str + " is a palindrome.");
+      } else {
+          System.out.println(str + " is not a palindrome.");
+      }
+  }
+
+  public static String reverseString(String str) {
+      StringBuilder reversed = new StringBuilder(str);
+      reversed.reverse();
+      return reversed.toString();
+  }
+
+    public static void main(String[] args) {
+        Scanner console = new Scanner(System.in);
+
+      System.out.println("Enter string:");
+      String str = console.nextLine();
+
+        f1(str);
+
+        console.close();
+    }
+}
 
