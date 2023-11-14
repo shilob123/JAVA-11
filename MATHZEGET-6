@@ -1,1 +1,36 @@
+// תרגיל 1
+/* כתוב פונקציה הקולטת מהמקלדת 5 ציונים של תלמיד ומדפיסה את הממוצע שלהם. */
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void f1() {
+        Scanner console = new Scanner(System.in);
+        int sum = 0;
+        int number;
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Enter number: ");
+            number = console.nextInt();
+            sum = sum + number;
+        }
+
+        double AVG = (double) sum / 5; 
+        System.out.println("The AVG is: " + AVG);
+        
+    }
+
+    public static void main(String[] args) {
+        f1();
+    }
+}
+
+
+
+// תרגיל 2
+
+/* כתוב פונקציה הקולטת מהמקלדת מילים(מחרוזות) עד לקליטת המילה "enter", הפונקציה תדפיס
+את מספר המילים שנקלטו מהמקלדת(כולל enter(. */
+
 
