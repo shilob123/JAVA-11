@@ -145,3 +145,167 @@ public class Main {
     }
 }
 
+
+// תרגיל 6
+
+/*  כתוב פונקציה המדפיסה את לוח הכפל.(יש להשתמש בלולאה מקוננת) */
+
+
+import java.util.Scanner;
+
+public class Main {
+
+  public static void f1() {
+      for(int i=1;i<=10;i++)
+        {
+          for(int j=1;j<=10; j++)
+            {
+              System.out.print(" " + i*j);
+              
+            }
+          System.out.println();
+        }
+       
+
+  }
+
+  
+
+    public static void main(String[] args) {
+        
+
+        f1();
+
+        
+    }
+}
+
+
+// תרגיל 7
+
+/* כתוב פונקציה הקולטת 7 ציונים של תלמיד, הפונקציה תדפיס את הציון המינימלי והציון המקסימלי. */
+
+
+
+import java.util.Scanner;
+
+public class Main {
+
+  public static void f1() {
+      int max ;
+      int min ;
+      Scanner console = new Scanner(System.in);
+      System.out.println("Enter grade: ");
+      int grade = console.nextInt();
+      max = grade;
+      min = grade;
+     
+    
+      for(int i=0;i<3;i++)
+        {
+          System.out.println("Enter another grade: ");
+          grade = console.nextInt();
+
+          if (grade> max)
+          {
+            max=grade;
+          }
+
+          if (grade<min)
+          {
+            min=grade;
+          }
+          
+        }
+       System.out.println("max grade is: "+max);
+        System.out.println("min grade is "+min);
+
+  }
+
+  
+
+    public static void main(String[] args) {
+        
+
+        f1();
+
+        
+    }
+}
+
+
+// תרגיל 9
+
+/* כתוב פונקציה המקבלת 2 מספרים, הפונקציה תדפיס את המכפלה ביניהם ללא שימוש בפעולת
+ הכפל. */
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void f1(int num1, int num2) {
+        int result = 0;
+
+        for (int i = 0; i < num1; i++) {
+            result += num2;
+        }
+
+        System.out.println("The product is: " + result);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the first number: ");
+        int num1 = scanner.nextInt();
+
+        System.out.println("Enter the second number: ");
+        int num2 = scanner.nextInt();
+
+        f1(num1, num2);
+
+        
+        scanner.close();
+    }
+}
+
+
+// תרגיל 10
+
+/*  כתוב פונקציה המקבלת מספר המהווה גובה של משולש כוכביות שווה שוקיים. הפונקציה תדפיס
+ את המשולש */
+
+  import java.util.Scanner;
+
+  public class Main {
+
+      public static void f1(int height) {
+          for (int i = 0; i < height; i++) {
+
+              for (int j = 0; j < height - i - 1; j++) {
+                  System.out.print(" ");
+              }
+
+              for (int k = 0; k < i * 2 + 1; k++) {
+                  System.out.print("*");
+              }
+
+              System.out.println();
+          }
+      }
+
+      public static void main(String[] args) {
+          Scanner scanner = new Scanner(System.in);
+
+          
+              System.out.println("Enter the height of the triangle: ");
+              int height = scanner.nextInt();
+
+              f1(height);
+          
+              scanner.close();
+          
+      }
+  }
+
+
