@@ -1,0 +1,55 @@
+// תרגיל 1
+
+  import java.util.Scanner;
+
+  public class Main {
+
+      public static void f1(int v1, int v2, int t1, int t2) {
+
+        int x1 = v1 * t1;
+        int x2 = v2 * t2;
+        int s1 = x1 - x2;
+        int s2 = x2 - x1;
+        
+
+        if (x1 - x2 >0){
+          
+          System.out.println("The distance between s1 and s2 is: " + s1 + " meters");
+          
+        }
+        else
+          if (x2 - x1 >0) {
+            
+            System.out.println("The distance between s2 and s1 is: " + s2 + " meters");
+        }
+          
+          else{
+            System.out.println("cant do it");
+          }
+          
+        
+        
+      }
+
+      public static void main(String[] args) {
+          Scanner scanner = new Scanner(System.in);
+
+          
+              System.out.println("Enter v1 ");
+              int v1 = scanner.nextInt();
+
+          System.out.println("Enter v2 ");
+          int v2 = scanner.nextInt();
+  
+          System.out.println("Enter t1 ");
+          int t1 = scanner.nextInt();
+  
+          System.out.println("Enter t2 ");
+          int t2 = scanner.nextInt();
+
+              f1(v1, v2 , t1 ,t2);
+          
+              scanner.close();
+          
+      }
+  }
