@@ -1,0 +1,90 @@
+// תרגיל 1
+  import java.util.Scanner;
+
+  public class Main {
+
+      public static void f1(int[] arr) {
+
+        
+
+        if (arr[1]%2==0){
+          
+          System.out.println("True ");
+          
+        }
+        else{
+          arr[1]= arr[1] +1;
+          System.out.println(arr[1]);
+        }
+          
+          
+        
+        
+      }
+
+      public static void main(String[] args) {
+          Scanner scanner = new Scanner(System.in);
+
+          
+              int arr []= new int[5];
+              for (int i = 0; i < arr.length; i++) {
+                System.out.println("enter a number  ");
+                arr[i] = scanner.nextInt();
+              }
+
+              f1(arr);
+        
+                
+        
+        
+          
+      }
+  }
+
+
+// תרגיל 2
+  import java.util.Scanner;
+
+  public class Main {
+
+      public static void f1() {
+
+        Scanner scanner = new Scanner(System.in);
+        int sum =0;
+
+
+              int arr []= new int[5];
+              for (int i = 0; i < arr.length; i++) {
+                System.out.println("enter your grade  ");
+                arr[i] = scanner.nextInt();
+                sum = sum + arr[i];
+              }
+
+        double AVG =sum/5;
+        System.out.println("The average is : " + AVG);
+
+        
+
+        
+          
+          
+        
+        
+      }
+
+      public static void main(String[] args) {
+        
+          
+
+              f1();
+        
+                
+        
+        
+          
+      }
+  }
+
+
+// תרגיל 3
+
