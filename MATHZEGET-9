@@ -88,3 +88,116 @@
 
 // תרגיל 3
 
+import java.util.Scanner;
+
+public class Main {
+
+    public static int f1() {
+        Scanner scanner = new Scanner(System.in);
+
+        int min;
+
+        System.out.println("Enter your grade: ");
+        int grade = scanner.nextInt();
+        min = grade;
+
+        int[] arr = new int[4];
+
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print("Enter grade number " + (i + 2) + ": ");
+            arr[i] = scanner.nextInt();
+
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+
+        System.out.println("The minimum grade is: " + min);
+        return min;
+    }
+
+    public static void main(String[] args) {
+        f1();
+    }
+}
+
+
+
+
+
+// תרגיל 4 
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void f1(int[] arr) {
+        System.out.println("pairs");
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] % 2 != 0 && arr[i + 1] % 2 != 0) {
+                System.out.println("(" + arr[i] + ", " + arr[i + 1] + ")");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] arr = new int[10];
+        int sum = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println("Enter an number: ");
+            arr[i] = scanner.nextInt();
+            sum = sum + arr[i];
+        }
+
+        
+        f1(arr);
+
+        
+    }
+}
+
+
+
+// תרגיל 5
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main {
+    public static boolean f1(int num) {
+        Random random = new Random();
+        int[] arr = new int[10];
+
+        for (int i = 0; i < arr.length; i++) {
+            int randomNumber = random.nextInt(10000000);
+            arr[i] = randomNumber;
+
+            if (arr[i] == num) {
+              System.out.println("true");
+                return true;
+            }
+        }
+      System.out.println("false");
+
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter a number: ");
+        int num = scanner.nextInt();
+
+         f1(num);
+
+        
+    }
+}
+
+
+// תרגיל 6
+
+
