@@ -1,11 +1,13 @@
 // תרגיל 1
 
+/* כתוב פונקצייה המקבלת מספר שלם וחיובי הפונקציה תדפיס בדרך רקורסיבית לפי סדר יורד את המספרים מהמספר שהתקבל ועד המספר 1  */
+
 import java.util.Scanner;
 
 public class Main {
     public static void f1(int n) {
               if (n <= 0) {
-                  System.out.println("המספר חייב להיות חיובי");
+                  System.out.println("the number must be positive");
               } else {
                   printRecursiveNumbers(n);
               }
@@ -34,5 +36,87 @@ public class Main {
       int number = scanner.nextInt();
       
       f1(number);
+    }
+}
+
+
+// תרגיל 2
+
+/*  כתוב אותה פונקצייה רק שתיהיה בסדר עולה במקום יורד מ 1 ועד המספר כולל.  */
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void f1(int n) {
+      if (n <= 0) {
+          System.out.println("the number must be positive");
+      } 
+      else {
+          printRecursiveNumbersAscending(1, n);
+      }
+            
+        
+
+        
+    }
+
+
+  public static void printRecursiveNumbersAscending(int start, int end) {
+      if (start > end) {
+          return;
+      } else {
+          System.out.println(start);
+          printRecursiveNumbersAscending(start + 1, end);
+      }
+  }
+
+    public static void main(String[] args) {
+
+      Scanner scanner = new Scanner(System.in);
+
+
+      System.out.println("Enter a number ");
+      int number = scanner.nextInt();
+      
+      f1(number);
+    }
+}
+
+
+
+
+// תרגיל 3
+
+
+/*  העלאה בחזקה כתוב פונקצייה רקורסיבית המקבלת 2 מספרים אי שליליים שלמים n, x ומחזירה את x בחזקת n   */
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static int power(int x, int n) {
+        if (n < 0) {
+            System.out.println("Possession must be positive");
+            return -1;
+        } else if (n == 0) {
+            return 1;
+        } else {
+            
+            return x * power(x, n - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter base ");
+        int base = scanner.nextInt();
+
+        System.out.println("Enter exponent ");
+        int exponent = scanner.nextInt();
+
+        int result = power(base, exponent);
+        System.out.println(base + " in exponent " + exponent + " its  " + result);
     }
 }
