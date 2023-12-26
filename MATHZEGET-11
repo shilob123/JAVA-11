@@ -1,0 +1,38 @@
+// תרגיל 1
+
+import java.util.Scanner;
+
+public class Main {
+    public static void f1(int n) {
+              if (n <= 0) {
+                  System.out.println("המספר חייב להיות חיובי");
+              } else {
+                  printRecursiveNumbers(n);
+              }
+            
+        
+
+        
+    }
+
+
+  public static void printRecursiveNumbers(int num) {
+      if (num == 1) {
+          System.out.println(num);
+      } else {
+          System.out.println(num);
+          printRecursiveNumbers(num - 1);
+      }
+  }
+
+    public static void main(String[] args) {
+
+      Scanner scanner = new Scanner(System.in);
+
+
+      System.out.println("Enter a number ");
+      int number = scanner.nextInt();
+      
+      f1(number);
+    }
+}
