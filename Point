@@ -48,6 +48,21 @@ public class Point {
 		System.out.println("(" + _x +"," + _y + ")");
 		
 	}
+	
+	public boolean equal(Point other)
+	{ 
+	 if((_x==other._x)&&(_y==other._y)) {
+		 System.out.println("true");
+		 return true;
+	 }
+	 
+	 else {
+		 System.out.println("false");
+		 return false;
+	 }
+	 
+	}
+
 
 }
 
