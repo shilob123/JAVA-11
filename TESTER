@@ -1,0 +1,31 @@
+  public class Tester {
+
+      
+
+      public static void main(String[] args) {
+          Mathzeget7 m7 = new Mathzeget7(2,5);
+          Mathzeget7 m8= new Mathzeget7 (m7);
+          m7.GeneralSeries();
+          m7.memberCalculation(5);
+          m7.calculateN(30);
+          
+          m8.setDIFF(15);
+          
+          m7.equal(m8);
+          
+          Point p1 = new Point (3,7);
+          p1.printStatus();
+          Point p2= new Point (p1);
+          
+          
+          p2.printStatus();
+          p2.setX(5);
+          p1.setY(1);
+          p1.printStatus();
+          
+          p2.printStatus();
+          
+          
+          p1.equal(p2);
+      }
+  }
