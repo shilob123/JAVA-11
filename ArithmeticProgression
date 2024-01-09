@@ -1,0 +1,75 @@
+
+public class Mathzeget7 {
+	
+	private int firstMember, difference;
+	
+	
+	public Mathzeget7(int fM , int diff)
+	{
+		firstMember= fM;
+		
+		difference = diff;
+		
+	}
+	
+	public Mathzeget7 (Mathzeget7 other) {
+		firstMember= other.firstMember;
+		difference= other.difference;
+	}
+	
+	public void setFM(int fm)
+	 {
+	 firstMember=fm;
+	 }
+	 public void setDIFF (int diff) {
+		 difference=diff;
+	 }
+	
+	public int getFM() {
+		return firstMember;
+	}
+	
+	public int getDIFF() {
+		return difference;
+	}
+
+	
+	public void GeneralSeries() {
+		
+		System.out.println("an="+firstMember+" + "+difference +"(n-1)");
+		
+	}
+	
+	public int memberCalculation(int n) {
+		
+		int an = firstMember + difference *(n-1);
+		
+		System.out.println(an);
+		
+		return an;
+	 
+		
+		
+		
+	}
+	
+	public int calculateN(int an) {
+		
+		return firstMember;
+		
+	}
+	
+	public boolean equal(Mathzeget7 other)
+	{ 
+	 if((firstMember==other.firstMember)&&(difference==other.difference)) {
+		 System.out.println("true");
+		 return true;
+	 }
+	 
+	 else {
+		 System.out.println("false");
+		 return false;
+	 }
+
+	}
+}
