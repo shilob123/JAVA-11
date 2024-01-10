@@ -1,0 +1,72 @@
+// תרגיל 1
+
+/*  כתוב פעולה חיצונית ששמה filter בשפת Java או Filter בשפת #C המקבלת מערך מטיפוס שלם — arr ומספר 
+מטיפוס שלם — num . על הפעולה להחזיר מערך חדש מטיפוס שלם, הכולל רק את המספרים המופיעים במערך arr 
+שאינם שווים ל־ num .
+
+הנח שקיים במערך arr מספר אחד לפחות שאינו שווה ל־ num ומספר אחד לפחות ששווה ל־ num .
+שים לב: גודל המערך המוחזר הוא כמספר האיברים במערך arr שאינם שווים ל־ num .
+הערה: אין חשיבות לסדר המספרים במערך המוחזר.
+
+  */
+
+      import java.util.Scanner;
+
+      public class Main {
+
+          public static int[] f1(int[] arr, int num) {
+
+            int newSize = 0;
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] != num) {
+                    newSize++;
+                }
+            }
+
+            // יצירת מערך המוחזר בגודל הנדרש
+            int[] result = new int[newSize];
+            int index = 0;
+
+            // מילוי המערך המוחזר עם המספרים שאינם שווים ל־ num 
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] != num) {
+                    result[index] = arr[i];
+                    index++;
+                }
+            }
+
+            for (int x=0;x<result.length;x++){
+
+              System.out.print(result[x] + " ");
+            }
+            
+
+            
+           
+
+            return result;
+          }
+
+          public static void main(String[] args) {
+              Scanner scanner = new Scanner(System.in);
+
+
+                  int arr []= new int[5];
+                  for (int i = 0; i < arr.length; i++) {
+                    System.out.println("enter a number  ");
+                    arr[i] = scanner.nextInt();
+                  }
+
+            System.out.println("enter a number  ");
+            int num = scanner.nextInt();
+
+
+
+                  f1(arr, num);
+
+
+
+
+
+          }
+      }
