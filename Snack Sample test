@@ -13,6 +13,7 @@ Snack. לאחר מכן הגדר מערך מסוג Snack המכיל את שלוש
 // המחלקה Snack
 
 
+
 public class Snack {
 	
 	private String _name;
@@ -20,19 +21,19 @@ public class Snack {
 	
 	public Snack (String name , double price) {
 		
-		this._name=name;
+		_name=name;
 		
-		this._price=price;
+		_price=price;
 		
 		
 	}
 	
 	public void setNAME(String name)
 	 {
-		this._name=name;
+		_name=name;
 	 }
 	 public void setPRICE (double price) {
-		 this._price=price;
+		 _price=price;
 	 }
 	
 	public String getNAME() {
@@ -43,6 +44,11 @@ public class Snack {
 		return _price;
 	}
 	
+	public void addPRICE( double price) {
+		_price= getPRICE() + price  ;
+		
+	}
+	
 	public void printsnack() {
 		
 		System.out.println(_name + "  " + _price);
@@ -50,6 +56,7 @@ public class Snack {
 	}
 
 }
+
 
 
 // המחלקה tester
@@ -81,6 +88,9 @@ public static void main(String[] args) {
           Snack[] snacksArray = {snack1, snack2, snack3};
           
           total(snacksArray);
+
+	  snack1.addPRICE(5);
+          snack1.printsnack();
 
 
 }
