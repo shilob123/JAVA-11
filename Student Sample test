@@ -1,1 +1,59 @@
+// המחלקה student
+
+/*    כתוב מחלקה בשם Student והגדר את התכונות הבאות: שם פרטי)String ),שם משפחה)String ),
+מספר ת.ז)long )- ללא אפס בהתחלה , שנת לימוד)int).
+סעיף ב)10(:
+כתוב בנאי שמאתחל את תכונות המחלקה Student. ובנוסף כתוב בנאי העתקה.
+סעיף ג)10 נקודות(:
+כתוב פונקציה 1overYear בתוך המחלקה Student, הפונקציה מחזירה תשובה בוליאנית האם
+הסטודנט מעל שנה ראשונה אך עדיין לא בשנה רביעית.   */
+
+public class Student {
+    
+    private String _name, _name2;
+    private long _id;
+    private int _year;
+
+    public Student(String name, String name2, long id, int year) {
+        _name = name;
+        _name2 = name2;
+        _id = id;
+        _year = year;
+    }
+
+    public Student(Student other) {
+        _name = other._name;
+        _name2 = other._name2;
+        _id = other._id;
+        _year = other._year;
+    }
+
+    public void print() {
+        System.out.println(_name);
+        System.out.println(_name2);
+        System.out.println(_id);
+        System.out.println(_year);
+    }
+
+    public boolean overYear1() {
+        int yearInSchool = 2024 - _year;
+
+        if (yearInSchool > 1 && yearInSchool < 4) {
+            System.out.println("true");
+            return true;
+        } else {
+            System.out.println("false");
+            return false;
+        }
+    }
+}
+
+
+// המחלקה tester
+
+Student s1 = new Student ("shilo", "bitton", 330990235, 2022 );
+    	  
+    	  s1.print();
+    	  s1.overYear1();
+
 
