@@ -1,0 +1,41 @@
+// תרגיל 1 א
+
+/*  כתוב פונקציה המקבלת מחרוזת מסוג String ובנוסף מספר שלם ,הפונקציה תחזיר תשובה
+בוליאנית האם מספר התווים של המחרוזת גדול מהמספר השלם. */
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static boolean f1(String str, int num) {
+        int length = str.length();
+
+        System.out.println(length);
+
+        if (length > num) {
+            System.out.println("true");
+            return true;
+        } else {
+            System.out.println("false");
+            return false;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String str;
+
+        System.out.println("Enter string: ");
+        str = scanner.next();
+
+        System.out.println("Enter a number: ");
+        int num = scanner.nextInt();
+
+        f1(str, num);
+    }
+}
+
+
+// שאלה 1 ב
+
