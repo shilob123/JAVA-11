@@ -1,1 +1,86 @@
+/*   במערכת המחשוב של רשת שופרסל קיימת מחלקת Snack שלה 2 תכונות:
+�𝑚𝑎𝑛� �𝑛𝑖𝑟𝑡𝑆� �𝑡𝑎𝑣𝑖𝑟𝑝� - שם החטיף �𝑐𝑖𝑟𝑝� �𝑙𝑏𝑢𝑜𝑑� �𝑡𝑎𝑣𝑖𝑟𝑝� - מחיר החטיף.
+בנוסף קיים בנאי המאתחל את ערכי התכונות של המחלקה.
+𝑝𝑢𝑏𝑙𝑖𝑐 𝑆𝑛𝑎𝑐𝑘(𝑆𝑡𝑟𝑖𝑛𝑔 𝑛𝑎𝑚𝑒, 𝑑𝑜𝑢𝑏𝑙𝑒 𝑝𝑟𝑖𝑐𝑒)
+סעיף א)8 נקודות(:
+כתוב פונקציות get ו- set עבור תכונות המחלקה Snack.
+סעיף ב)17 נקודות(:
+- הגדר מחלקה נוספת Tester, בפונקציה הראשית צור בעזרת הבנאי 3 משתנים מסוג
+Snack. לאחר מכן הגדר מערך מסוג Snack המכיל את שלושת החטיפים שהגדרת.
+- בתוך המחלקה Tester מעל הפונקציה הראשית כתוב פונקציה total המקבלת את המערך
+שיצרת, הפונקציה תדפיס את סכום שלושת החטיפים במערך.   */
 
+// המחלקה Snack
+
+
+public class Snack {
+	
+	private String _name;
+	private double _price;
+	
+	public Snack (String name , double price) {
+		
+		this._name=name;
+		
+		this._price=price;
+		
+		
+	}
+	
+	public void setNAME(String name)
+	 {
+		this._name=name;
+	 }
+	 public void setPRICE (double price) {
+		 this._price=price;
+	 }
+	
+	public String getNAME() {
+		return _name;
+	}
+	
+	public double getPRICE() {
+		return _price;
+	}
+	
+	public void printsnack() {
+		
+		System.out.println(_name + "  " + _price);
+		
+	}
+
+}
+
+
+// המחלקה tester
+
+
+public static void total(Snack[] snacksArray) {
+	        double total = 0;
+
+	        for (Snack snack : snacksArray) {
+	            total += snack.getPRICE();
+	        }
+
+	        System.out.println("The total price of the snacks is: " + total + "$");
+	    }
+
+public static void main(String[] args) {
+    	  
+    	  
+    	  Snack snack1 = new Snack("Chips", 5.99);
+          Snack snack2 = new Snack("Chocolate", 3.49);
+          Snack snack3 = new Snack("Soda", 1.99);
+          
+          snack1.printsnack();
+          
+          snack2.printsnack();
+          
+          snack3.printsnack();
+          
+          Snack[] snacksArray = {snack1, snack2, snack3};
+          
+          total(snacksArray);
+
+
+}
