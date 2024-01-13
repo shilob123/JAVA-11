@@ -1,1 +1,65 @@
+/*   לפניך הפונקציה main של המחלקה Tester ותוצאות פקודות ההדפסה.
+public class Tester
+{
+public static void main(String[] args)
+{
+A a1=new A(3,3);
+System.out.println(a1); // output 3+3=6
+a1.setN1(0);
+a1.setN2(0);
+System.out.println(a1); // output 0+0=0
+a1.add(5);
+System.out.println(a1); // output 5+5=10
+}
+}
+סעיף א)10 נקודות(:
+כתוב את התכונות והבנאי של המחלקה A.
+סעיף ב)15 נקודות(:
+כתוב את הפונקציה toString של המחלקה A.   */
+
+
+// המחלקה A
+
+
+public class A {
+	
+	private int _N1 , _N2;
+	
+	public A (int N1 , int N2) {
+		
+		_N1=N1;
+		
+		_N2=N2;
+		
+		
+	}
+	
+	public void setN1(int N1)
+	 {
+		_N1=N1;
+	 }
+	 public void setN2 (int N2) {
+		 _N2=N2;
+	 }
+	
+	public int getN1() {
+		return _N1;
+	}
+	
+	public int getN2() {
+		return _N2;
+	}
+	
+	public void addN( int num) {
+		_N1= getN1() + num  ;
+		
+		_N2= getN2() + num  ;
+		
+	}
+	
+	public String toString() {
+        return _N1 + "+" + _N2 + "=" + (_N1 + _N2);
+    }
+
+}
 
