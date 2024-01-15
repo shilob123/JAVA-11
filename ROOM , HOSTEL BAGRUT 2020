@@ -1,0 +1,143 @@
+// המחלקה Room
+
+
+public class Room {
+	
+	
+	private int _roomnum , _roomtype , _nightsreserved;
+	
+	public Room (int roomnum , int roomtype , int nightsreserved) {
+		
+		
+		_roomnum = roomnum;
+		
+		_roomtype = roomtype;
+	
+		_nightsreserved=nightsreserved;
+		
+		
+	}
+	
+	
+	public void setROOMNUM(int roomnum)
+	 {
+		_roomnum=roomnum;
+	 }
+	 public void setROOMTYPE (int roomtype) {
+		 _roomtype= roomtype ;
+	 }
+	 
+	 public void SETNIGHTSRESERVED(int nightsreserved)
+	 {
+		 _nightsreserved= nightsreserved;
+	 }
+	
+	public int getROOMNUM() {
+		return _roomnum;
+	}
+	
+	public int getROOMTYPE() {
+		return _roomtype;
+	}
+	
+	public int getNIGHTSRESERVED() {
+		return _nightsreserved;
+	}
+	
+	public double income() {
+		
+		if (_roomtype == 1) {
+			
+			System.out.println("the price to room " + (_roomnum+100) + " is: " + _nightsreserved * 50);
+			return (_nightsreserved * 50) ;
+			
+			
+		}
+		else {
+			System.out.println("the price to room " + (_roomnum+100) + " is: " + _nightsreserved * 100);
+			
+			return (_nightsreserved * 100) ;
+			
+		}
+		
+
+		
+	}
+	
+	public String toString() {
+        return "the price is: " + _nightsreserved * 100;
+    }
+	
+	
+
+
+	
+	
+
+}
+
+// המחלקה Hostel
+
+
+public class Hostel {
+    private Room[] allRooms;
+
+    public Hostel(Room[] allRooms) {
+        this.allRooms = allRooms;
+    }
+
+    public int orderRoom(int nights, int type) {
+        for (int i = 0; i < allRooms.length; i++) {
+            if (allRooms[i].getNIGHTSRESERVED() == 0 && allRooms[i].getROOMTYPE() == type) {
+                allRooms[i].SETNIGHTSRESERVED(nights);
+                return allRooms[i+100].getROOMNUM();
+            }
+        }
+        return -1;
+    }
+
+    public int[] floorIncome() {
+        int[] floorIncome = new int[3];
+
+        for (int i = 0; i < allRooms.length; i++) {
+            int floor = allRooms[i].getROOMNUM() / 100;
+            floorIncome[floor] += allRooms[i].income();
+        }
+
+        return floorIncome;
+    }
+}
+
+
+// המחלקה tester
+
+
+    	  Room room1 = new Room (241 , 2 , 4);
+    	  
+    	  room1.income ();
+    	  
+    	  System.out.println(room1);
+    	  
+    	  
+    	  Room[] allRooms = new Room[200];
+          for (int i = 0; i < 200; i++) {
+              allRooms[i] = new Room(i + 1, (i % 2) + 1, 0);
+          }
+          
+          Hostel hostel = new Hostel(allRooms);
+          
+          System.out.println("Ordering rooms:");
+          System.out.println(hostel.orderRoom(3, 1));
+          System.out.println(hostel.orderRoom(2, 2));
+          System.out.println(hostel.orderRoom(4, 1));
+          System.out.println(hostel.orderRoom(1, 2));
+          System.out.println(hostel.orderRoom(3, 1));
+          System.out.println(hostel.orderRoom(2, 2));
+          System.out.println(hostel.orderRoom(4, 1));
+        
+          
+          
+          int[] floorIncome = hostel.floorIncome();
+          for (int i = 0; i < floorIncome.length; i++) {
+              System.out.println("Floor " + (i + 1) + ": " + floorIncome[i] + " shekels");
+          }
