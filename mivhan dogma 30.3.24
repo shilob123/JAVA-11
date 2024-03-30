@@ -1,0 +1,143 @@
+1. החזר אמת אם מדובר בתור זוגי מושלם מהי סיבוכיות הריצה
+public static boolean perfect_even(Queue<Integer> q)
+{
+  int count = 0;
+  int sum = 0 , x = 0;
+	Queue<Integer> temp = new Queue<Integer>();
+	while(!q.isEmpty())
+	{
+     x = q.remove();
+		temp.insert(x);
+		count++;
+    sum += x;
+	}
+	while(!temp.isEmpty())
+		q.insert(temp.remove());
+  
+  if (count%2==0 && sum%2==0)
+    return true;
+  else
+    return false;
+}
+
+סיבוכיות: o(n^2)
+
+
+2.מספרים זוגיים בראש התור אי זוגיים בסופו
+
+public static Queue<Integer>  arrange(Queue<Integer> q)
+{
+  int x = 0;
+  Queue<Integer> temp1 = new Queue<Integer>();
+	Queue<Integer> temp2 = new Queue<Integer>();
+
+ while (!q.isEmpty())
+		{
+			x = q.remove();
+
+			if (x % 2 == 0)
+				temp1.insert(x);
+      else 
+        temp2.insert(x);
+      }
+   while (!temp2.isEmpty())
+   {
+     x=temp2.remove();
+     temp1.insert(x);
+   }
+
+   return temp1;
+   
+
+
+}
+סיבוכיות o(n^2)
+
+3. סכום של כל שני מספרים לא בהכרח צמודים גדול מ k
+
+
+
+
+
+
+
+4. כתוב פעולה שתדפיס את המילה הארוכה ביותר בשרשרת 
+
+public static void print(Node<String> n)
+{
+  String str = "" 
+  int lenght = 0;
+  Node<String> pos = n;
+	
+	while (pos != null)
+	{
+		
+    if (lenght<pos.getValue().Lenght)
+    {
+      lenght =pos.getValue().Lenght();
+      str= pos.getValue();
+    }
+    
+		pos = pos.getNext();
+	}
+ System.out.println(str)
+
+}
+סיבוכיות o(n)
+
+
+5. 
+ public static Node<Integer>  chain(Node<String> n1, Node<String> n2 )
+ {
+   int i =0;
+   int number = 0;
+   Node<Integer>  temp = null;
+	  Node<Integer>  pos = n1;
+	  Node<Integer>  pos2 = n2;
+   Node<Integer>  pos3 = null;
+  
+   int[] array = new int[n2.size()];
+   int[] array2 = new int[n1.size()];
+   while (pos2 != null)
+   {
+     
+      array[i] = pos2.getValue();
+      pos2 = pos2.getNext();
+      i++;
+        
+   }
+   i = 0;
+while (pos1 != null)
+   {
+     
+      array2[i] = pos1.getValue();
+      pos1 = pos1.getNext();
+      i++;
+        
+   }
+for(int y = 0; y< array2.size(); y++)
+{
+    number = array2[y];
+    for(int z = 0; z< array.size(); z++)
+    {
+        if (number == array[z])
+        {
+            if (pos3 == null)
+            {
+            pos3 = new Node<Integer>(number);
+            temp = pos3;
+            }
+      	    else
+           {
+      		      temp.setNext(new Node<Integer>(number));
+				        temp = temp.getNext();
+           }
+        }
+      }
+    }
+return pos3;
+}
+   
+
+ }
+
