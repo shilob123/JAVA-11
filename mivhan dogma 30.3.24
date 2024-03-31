@@ -141,3 +141,201 @@ return pos3;
 
  }
 
+
+
+
+6. כתוב פעולה אשר מקבלת תור שלמים לוקחת שני מספרים ומכניסה לתוך שרשרת חוליות אשר מכילה את המספר הראשון בכמות הפעמים של המספר השני
+
+
+public static Node<Integer>  tempo(Queue<Integer> q)
+{
+	Node<Integer>  temp = null;
+	Node<Integer>  pos = null;
+	int x = 0;
+	int y = 0;
+	while(!q.isEmpty())
+	{
+		x=q.remove();
+		y = q.remove();
+		for (int i = 0; i<y ; i++)
+		{
+			if (temp == null)
+			{
+				temp = new Node<Integer>(x);
+				pos = temp;
+			}
+			
+			
+			else
+			{
+				pos.setNext(new Node<Integer>(x));
+				pos = pos.getNext();
+			}
+
+		}
+		
+	}
+	return temp;
+	
+}
+
+סיבוכיות: o(n^2)
+
+
+7. כתוב פעולה אשר מקבלת כפרמטר תור q   מטיפוס מספר שלם , מספר שלם x,  ומספר שלם k.
+הפעולה תוסיף את ערכו של x לכל המספרים בתור אשר מתחלקים ב-k ללא  שארית. 
+     מהי סיבוכיות זמן הריצה של הפעולה שכתבת?  
+
+public static void  add(Queue<Integer> q , int x , int k)
+{
+	int y = 0;
+	Queue<Integer> temp = new Queue<Integer>();
+	while(!q.isEmpty())
+	{
+		y = q.remove();
+		if (y%k == 0)
+		{
+			temp.insert(y+x);
+		}
+		else
+			temp.insert(y);
+
+	}
+	while(!temp.isEmpty())
+		q.insert(temp.remove());
+
+}
+
+סיבוכיות o(n)
+
+8. כתוב פעולה אשר מקבלת כפרמטר תור q   מטיפוס תו   (Queue<Character>  q)
+     הפעולה תחזיר אמת אם קיימים שני תווים צמודים זהים בתור q, אחרת תחזיר 
+     שקר.
+
+
+public static boolean  check(Queue<Character> q )
+{
+	int x =0;
+	while (!q.isEmpty())
+	{
+		x= q.remove();
+		if (x == q.head())
+		{
+			return true;
+		}
+		
+	}
+	return false;
+}
+
+סיבוכיות o(n)
+
+
+9.
+
+public static boolean canFormString(Queue<Character> q, String s)
+{
+	int i = 0;
+    while (!q.isEmpty()) {
+        char c = q.remove();
+        if (c != s.charAt(i)) {
+            return false;
+        }
+        i++; 
+    }
+	return true;
+	
+      
+}
+
+סיבוכיות: o(n)
+
+
+
+10. "תור משולש" הינו תור של מטיפוס מספר שלם אשר: 
+      א. הינו בגודל מספר אשר מתחלק ב-3 ללא שארית.
+      ב.  אינו ריק (אינו null).
+      ג.  סכום המספרים בתור משולש חייב להיות מספר אשר מתחלק ב-3.
+      ד. חלוקה של התור לשלושה חלקים שווים, יכילו את אותם המספרים בדיוק.
+      דוגמה:
+     התור הבא הינו "תור משולש":   q:[3 , 1 , 5 , 3 , 1 , 5 , 3 , 1 , 5]
+     כתוב פעולה אשר מקבלת תור של שלמים q.
+     הפעולה תחזיר אמת אם התור הינו "תור משולש", אחרת תחזיר שקר.
+
+
+
+public static boolean tringleQ(Queue<Character> q)
+{
+	int sum = 0;
+	Queue<Integer> temp = new Queue<Integer>();
+	Queue<Integer> temp2 = new Queue<Integer>();
+	Queue<Integer> temp3 = new Queue<Integer>();
+	boolean flag = true;
+	// תנאי 1+2
+	if (q.size%3 == 0 && q.size!=0)
+	{
+		flag = true;
+	}
+	else
+		return false;
+
+	// תנאי 3
+
+	while (!q.isEmpty())
+	{
+		sum = sum +q.remove();
+		temp.insert(q.head());
+	}
+	if (sum %3 == 0)
+		flag = true;
+	else
+		return false;
+
+	// תנאי 4
+
+	while(!temp.isEmpty())
+		q.insert(temp.remove());
+	for (int i =0; i<q.size()/3 ; i++)
+	{
+		temp.insert(q.remove());
+	}
+
+	for ( i =0; i<q.size()/2 ; i++)
+	{
+		temp2.insert(q.remove());
+	}
+
+	for ( i =0; i<q.size() ; i++)
+	{
+		temp3.insert(q.remove());
+	}
+
+	for (i =0; i<temp.size() ; i++)
+	{
+		if (temp.head() == temp2().head && temp2.head() == temp3.head())
+		{
+			temp.remove();
+			temp2.remove();
+			temp3.remove();
+		}
+		else
+			return false;
+	}
+
+
+	return true;
+
+	
+
+	
+
+}
+
+
+סיבוכיות: o(n)
+
+
+
+
+
+
