@@ -20,7 +20,7 @@ public static boolean perfect_even(Queue<Integer> q)
     return false;
 }
 
-סיבוכיות: o(n^2)
+סיבוכיות: o(n)
 
 
 2.מספרים זוגיים בראש התור אי זוגיים בסופו
@@ -51,7 +51,7 @@ public static Queue<Integer>  arrange(Queue<Integer> q)
 
 
 }
-סיבוכיות o(n^2)
+סיבוכיות o(n)
 
 3. סכום של כל שני מספרים לא בהכרח צמודים גדול מ k
 
