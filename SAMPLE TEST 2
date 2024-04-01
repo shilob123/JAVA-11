@@ -1,0 +1,169 @@
+1. כתוב פעולה שמקבלת כפרמטר שרשרת חוליות מטיפוס מספר שלם.
+     הפעולה תדפיס את סכום המספרים בשרשרת אשר יש להם ספרת אחדות 3 או 
+     מתחלקים ב-3 ללא שארית.
+
+
+public static void sum(Node<Integer> n)
+{
+  int sum = 0;
+  Node<Integer> pos = n;
+  while (pos != null)
+	{
+    if (pos.getValue()%3 == 0 || pos.getValue()%10 == 3)
+    {
+      sum = sum + pos.getValue();
+    }
+		pos = pos.getNext();
+	}
+System.out.println(sum);
+
+}
+
+סיבוכיות o(n)
+
+
+2. כתוב פעולה שמקבלת כפרמטר שרשרת חוליות n של שלמים ומספר שלם x.
+     הפעולה תחזיר סכום של כל המספרים הסמוכים אחד לשני בשרשרת אשר ההפרש 
+     ביניהם הוא x.
+
+
+public static void sum(Node<Integer> n , int x)
+{
+  int sum = 0;
+   Node<Integer> pos = n;
+  while(pos != null)
+  {
+    y= pos.getValue();
+    pos = pos.getNext();
+    
+    if(y - pos.getValue() == x || pos.getValue() - y == x)
+    {
+      sum = sum + x +pos.getValue();
+    }
+  }
+}
+
+סיבוכיות o(n)
+
+
+3.כתוב פעולה שמקבלת כפרמטר שרשרת חוליות מטיפוס בוליאני.
+       הפעולה תחזיר אמת אם כמות החוליות בעלות ערך אמת, גדול או שווה מכמות 
+       החוליות בעלות ערך שקר, אחרת תחזיר שקר.
+
+public static boolean bool(Node<boolean> n)
+{
+  int false= 0;
+  int trueCount  = 0 ;
+   Node<Integer> pos = n;
+
+  while (pos != null)
+  {
+    if (pos.getValue() == true)
+      trueCount ++;
+
+    else
+      falseCount++;
+  }
+
+  if (trueCount > falseCount)
+    return true;
+  else
+    return false;
+}
+
+
+סיבוכיות o(n)
+
+
+4.  כתוב פעולה שמקבלת כפרמטר שרשרת חוליות n של שלמים ומספר שלם x.
+     הפעולה תוסיף בין כל 2 חוליות שההפרש ביניהן הוא x, את החוליה שהיא ממוצע 
+     שתי החוליות.    הפעולה תחזיר את השרשרת המעודכנת.
+     הנחה: x    הינו מספר זוגי.
+
+
+public static void sum(Node<Integer> n , int x)
+{
+  Node<Integer> pos = n;
+  Node<Integer> temp = null;
+  int avg =0;
+  while(pos != null && pos.getNext() != null)
+  {
+    
+   
+    if(pos.getValue() - pos.getNext().getValue() == x || pos.getNext().getValue() - pos.getValue() == x)
+    {
+      avg = (pos.getValue() + pos.getNext().getValue())/2
+      temp = pos.getNext();
+			pos.setNext(new Node<Integer>(avg , temp));
+			pos = pos.getNext();  
+    }
+    pos = pos.getNext();
+  }
+}
+
+סיבוכיות o(n)
+
+
+5. כתוב את הפעולה swipe1 שמקבלת כפרמטר שרשרת חוליות n של שלמים.
+     הפעולה תעביר את החוליה הראשונה לסוף השרשרת.
+
+
+
+public static void swipe1(Node<Integer> n )
+{
+  Node<Integer> pos = n;
+
+  int x = pos.getValue();
+
+  n = n.getNext();
+
+  Node<Integer> pos2 = n;
+
+  while(pos2.hasNext())
+		pos2 = pos2.getNext();
+	
+	pos2.setNext(new Node<Integer>(x));
+
+}
+
+סיבוכיות o(n)
+
+
+
+
+6. כתוב את הפעולה 2swipe שמקבלת כפרמטר שרשרת חוליות n של שלמים.
+     הפעולה תעביר את החוליה אחרונה לתחילת השרשרת.
+
+
+public static void swipe2(Node<Integer> n )
+{
+   Node<Integer> pos = n;
+  int x = 0;
+
+  while (pos != null)
+  {
+    x = pos.setValue();
+    pos = pos.getNext();
+  }
+  Node<Integer> pos2 = n;
+  while (pos.getNext().getNext() != null)
+  {
+    pos2= pos2.getNext();
+  }
+
+  pos2.setnext(null);
+
+  n = new Node<Integer>(x , n);
+  
+}
+סיבוכיות o(n^2)
+
+
+
+
+
+
+
+
+
+
