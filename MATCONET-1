@@ -15,4 +15,85 @@ public static int (int[] arr , int k)
 
 2. 
 
+// המחלקה Tree
+
+
+public class Tree {
+	
+	 private String _type ;
+	 private boolean _isFruity;
+	 private int _height;
+	 
+	 public Tree (String type, boolean isFruity, int height) {
+	        _type = type;
+	        _isFruity = true;
+	        _height = 300;
+	        
+	    }
+	 
+	 
+	 public void setType(String type)
+	 {
+		 _type=type;
+	 }
+	 public void setheight (int height) {
+		 _height=height;
+	 }
+	
+	public String gettype() {
+		return _type;
+	}
+	
+	public int getheight() {
+		return _height;
+	}
+	
+public void printtree() {
+		
+		System.out.println(_type);
+		System.out.println(_isFruity);
+		System.out.println(_height);
+		
+	}
+	 
+	 
+
+}
+
+
+// המחלקה Forest
+
+public class Forest {
+	
+	private String name;
+	
+	private Tree [] trees;
+	
+	public Forest(String name)
+	{
+		this.name = name;
+		this.trees = new Tree[1000];
+	}
+	
+	public double calculateAverage()
+	{
+		int count =0;
+		int sum =0;
+		
+		for (int i=0 ; i<trees.length; i++){
+			
+			if(trees[i].gettype().equals("oak"));
+			{
+				count++;
+				sum = sum + trees[i].getheight();
+			}
+			
+			
+		}
+		
+		return sum /= count;
+	}
+
+}
+
 
