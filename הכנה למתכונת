@@ -1,1 +1,199 @@
+1.כתוב פעולה negativeQue אשר מקבלת כפרמטר תור של שלמים q.
+     הפעולה תחזיר תור חדש, אשר מכיל רק את המספרים השליליים מתוך התור q.
+     יש לשמור על סדר התור.
 
+
+
+public static Queue<Integer> negativeQue (Queue<Integer>  q)
+{
+  Queue<Integer> temp1 = new Queue<Integer>();
+	Queue<Integer> temp2 = new Queue<Integer>();
+
+  while (!q.isEmpty())
+  {
+    if (q.head()<0){
+      temp2.insert(q.head())
+      temp1.insert(q.remove())
+    }
+    else
+      temp1.insert(q.remove())
+    
+  }
+  return temp1
+
+}
+
+
+
+2. כתוב פעולה addNumber אשר מקבלת כפרמטר תור ממויין של שלמים q ומספר שלם x.
+     הפעולה תדחוף את x למקומו הנכון בסדר המספרים בתוך התור q.
+     יש לשמור על סדר התור.
+     ממויין – מסודר מהמספר הקטן אל הגדול.
+
+
+
+public static void addNumber (Queue<Integer>  q, int x)
+{
+  Queue<Integer> temp1 = new Queue<Integer>();
+
+  while (!q.isEmpty())
+  {
+    if (q.head()>x)
+    {
+      temp1.insert(x);
+      
+    }
+    temp1.insert(q.remove());
+  }
+}
+
+
+3.  .  כתוב פעולה middle אשר מקבלת כפרמטר תור של מספרים ממשיים q.
+     הפעולה תחזיר ותמחק את האיבר האמצעי בתור.
+     אם התור בגודל זוגי, הפעולה תמחק את שני האיברים, אך תחליף אותם באיבר חדש שערכו    
+     הוא ממוצע שני הערכים.
+     יש לשמור על סדר התור.
+
+
+
+public static int middle (Queue<Integer>  q)
+{
+   Queue<Integer> temp1 = new Queue<Integer>();
+    int x1 =0;
+    int x2 =0;
+    int sum =0 ;
+
+    int size = q.size();
+
+    if (size %2 ==0)
+    {
+      for (int i=0 ; i<(size/2) - 1 ; i++)
+      {
+        temp1.insert(q.remove());
+      }
+      x1 = q.remove();
+      x2 = q.remove();
+
+      while (!q.isEmpty())
+        temp1.insert(q.remove());
+
+      sum = x1 + x2;
+      
+      for (int i=0 ; i<temp1.size()/2 ; i++)
+        q.insert(temp.remove());
+      q.insert(sum/2);
+
+      while (!temp1.isEmpty())
+        q.insert(temp1.remove());
+        
+    }
+
+  else
+  {
+    for (int i=0 ; i<q.size()/2 ; i++)
+    {
+      temp1.insert(q.remove());
+    }
+    int x1 = q.remove;
+
+    while(!q.isEmpty())
+      temp1.insert(q.remove());
+
+    while (!temp1.isEmpty())
+        q.insert(temp1.remove());
+
+        return x1;
+  }
+    
+}
+
+
+
+
+4. .  כתוב פעולה twoQues אשר מקבלת כפרמטר 2 תורים מטיפוס מספר שלם (q1  ו- q2).
+     הפעולה תחזיר תור חדש, אשר מכיל בתחילתו את כל המספרים האי-זוגיים מ-q1,
+     ובהמשכו את כל המספרים הזוגיים מ-q2.
+     יש לשמור על סדר התורים
+
+
+
+public static Queue<Integer> twoQues (Queue<Integer>  q1 , Queue<Integer>  q2)
+{
+  Queue<Integer> temp1 = new Queue<Integer>();
+  Queue<Integer> temp2 = new Queue<Integer>();
+
+  while(!q1.isEmpty())
+  {
+    if(q1.head() % 2 != 0)
+      temp2.insert(q1.head());
+    temp1.insert(q1.remove());
+  }
+
+   while (!temp1.isEmpty())
+        q1.insert(temp1.remove());
+
+    while(!q2.isEmpty())
+  {
+    if(q2.head() % 2 == 0)
+      temp2.insert(q2.head());
+    temp1.insert(q2.remove());
+  }
+
+   while (!temp1.isEmpty())
+        q2.insert(temp1.remove());
+
+    return temp2;
+
+    
+
+  
+}
+
+
+
+5. כתוב פעולה אשר מקבלת תור של שלמים q.
+     הפעולה תעביר את האיבר האחרון בתור להיות האיבר הראשון בתור.
+
+
+
+public static void lasttofirst (Queue<Integer>  q)
+{
+  Queue<Integer> temp1 = new Queue<Integer>();
+
+  for(int i=0; i<q.size()-1; i++)
+    temp1.insert(q.remove());
+
+  while(!temp1.isEmpty())
+    q.insert(temp1.remove());
+}
+
+
+// שרשרת חוליות
+
+
+
+1. כתוב פעולה שמקבלת שרשרת של מחרוזות n.
+     הפעולה תחזיר אמת, אם ניתן לקרוא כל מחרוזת משמאל לימין ומימין לשמאל, ולקבל את 
+     אותה המילה, אחרת תחזיר שקר.
+     תוכל להשתמש בפעולה: pal , אשר מקבלת מחרוזת כפרמטר ומחזירה אמת, אם ניתן לקרוא 
+     את המחרוזת מימין לשמאל ומשמאל לימין ולקבל את אותה המילה, אחרת תחזיר שקר.
+     יש לשמור על סדר השרשרת
+
+
+
+
+public static boolean pal(Node<String>  n)
+{
+  Node<Integer> pos = n;
+
+  while (pos != null)
+  {
+    if (pal(pos.getValue()) != true)
+    {
+      return false;
+    }
+  }
+
+  return true;
+  
+}
