@@ -1,0 +1,42 @@
+איך להכניס ערכים למערך במחלקות
+
+
+// איך לבנות  פעולה get כדי להכניס ערכים למערך
+	
+	public Book [] getBooks() {
+		return this.books;
+	}
+	
+	
+
+}
+
+// הקוד  main
+
+Book book1 = new Book ("football" , "melikson" , true);
+    	  
+    	  Book book2 = new Book ("dardale" , "melikson" , true);
+    	  
+    	  Book.name(book2);
+    	  
+    	  Library myLibrary = new Library("City Library");
+
+          // יצירת מספר אובייקטים של מחלקת ספר והוספתם לספרייה
+          Book book4 = new Book("Dog Man", "Dav Pilkey", true);
+          Book book5 = new Book("Cat Kid", "Dav Pilkey", true);
+          Book book3 = new Book("Harry Potter", "J.K. Rowling", false);
+
+          
+          myLibrary.getBooks()[0] = book1;
+          myLibrary.getBooks()[1] = book2;
+          myLibrary.getBooks()[2] = book3;
+          myLibrary.getBooks()[3] = book4;
+          myLibrary.getBooks()[4] = book5;
+
+          
+          myLibrary.numofbooks();
+
+          
+          myLibrary.DavPilkey();
+
+
