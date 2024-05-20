@@ -55,5 +55,79 @@ import java.util.Scanner;
     }
 
    
-    
+
+
+3. מחלקות
+
+
+public class Pack {
+	
+	private double price;
+	private Page [] pages;
+	
+	public Pack(double price) {
+		this.price=price;
+		this.pages= new Page[500];
+	}
+	
+	public static int whiteA4(Pack myPack) {
+	    int count = 0;
+	    for (int i = 0; i < myPack.pages.length; i++) {
+	    	if (myPack.pages[i] != null) {
+	    		Page page = myPack.pages[i];
+		        if (page != null && page.getColor().equals("white") && page.getSize().equals("A4")) {
+		            count++;
+		        }
+	    	}
+	        
+	    }
+	    return count;
+	}
+	
+	public static boolean q2(Pack myPack , int n) {
+		
+		int sum =0;
+		
+		for (int i = 0; i < myPack.pages.length; i++) {
+			
+			if (myPack.pages[i] != null  ) {
+				
+				Page page = myPack.pages[i];
+				sum =sum+ page.getWords();
+				
+			}
+  
+	        
+		}
+		if (sum ==n)
+			return true;
+		return false;
+		
+	}
+	
+	public void addPage(Page page, Pack myPack) {
+		int count =0;
+		
+		for (int i = 0; i < myPack.pages.length; i++) {
+			
+			if (myPack.pages[i] != null  )
+				count++;
+		if (count < pages.length) { // בדיקה אם יש מקום פנוי בחבילה
+			pages[count] = page; // הוספת העמוד למערך הדפים
+			count++; // עידכון מספר הדפים בחבילה
+			
+		} 
+		
+		
+	}
+		System.out.println(count);
+}
+		
+		public Page [] getPages() {
+			return this.pages;
+		}
+
+
+}
+
 
