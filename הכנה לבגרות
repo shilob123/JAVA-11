@@ -1,0 +1,59 @@
+1.
+נתונה המחלקה test אשר לה שתי תכונות
+מערך שלמים arr מספר שלם n 
+כתוב פעולה פנימית אשר תחזיר את כמות הפעמים שהמספר n מופיע במערךץ
+אם המספר אינו מופיע השיטה תחזיר -1 ותדפיס את הפלט "not exist"
+
+
+public int q1()
+{
+  int count = 0;
+
+  for (int i=0 ; i<arr.lenght ; i++)
+  {
+    if (arr[i] == n)
+      count++:
+  }
+  if (count == 0)
+  {
+   
+    System.out.println("not exist");
+    return -1;
+  }
+   return count;
+}
+
+
+
+2.
+
+כתוב פעולה שמקבלת מערך arr  מטיפוס מחרוזת ותו c.
+     הפעולה תחזיר מערך חדש של כל המחרוזות אשר מתחילות ב-c  או מסתיימות ב-c.
+
+
+import java.util.Scanner;
+
+
+    public static String[] f1(String[] arr, char c) {
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].charAt(0) == c || arr[i].charAt(arr[i].length() - 1) == c) {
+                count++;
+            }
+        }
+
+        int j = 0;
+        String[] arr2 = new String[count];
+        for (int y = 0; y < arr.length; y++) {
+            if (arr[y].charAt(0) == c || arr[y].charAt(arr[y].length() - 1) == c) {
+                System.out.println(arr[y]);
+                arr2[j] = arr[y];
+                j++;
+            }
+        }
+        return arr2;
+    }
+
+   
+    
+
