@@ -1,0 +1,101 @@
+1.
+
+public static void q1 (String [] arr, int x)
+{
+  for (int i=0; i<arr.length; i++)
+  {
+    		
+    if (arr[i].length() <= x)
+    	System.out.println(arr[i]);
+    else
+    	System.out.println(i);
+  }
+}
+
+2.
+
+public String mostDistantStar()
+{
+  int double=0.0;
+  int index =0;
+  
+  for (int i=0; i<this.Planets.lenght; i++)
+  {
+    if(this.Planets[i].getdistanceFromSun()>max)
+    {
+      max=this.Planets[i].getdistanceFromSun();
+      index = i;
+    }
+      
+  }
+  return this.Planets[index].getname();
+  
+  
+}
+
+
+3.
+
+public static Node<Integer> q3(Queue<Integer> q1, Queue<Integer> q2)
+{
+  int x = 0;
+   
+	Queue<Integer> temp1 = new Queue<Integer>();
+  Node<Integer>  temp2 = null;
+  
+  while(!q1.isEmpty())
+  {
+    x= q1.head();
+    if (isExist(q2,x) == false )
+    {
+      if (n == null)
+		    n = new Node<Integer>(x);
+  `     
+      else
+        temp2.setNext(new Node<Integer>(x));
+        temp2 = temp2.getNext();
+    }
+    temp1.insert(q1.remove());  
+  }
+
+  while(!temp1.isEmpty())
+    q1.insert(temp1.remove())
+
+  while(!q2.isEmpty())
+  {
+    x= q2.head();
+    if (isExist(q1,x) == false )
+    {
+      if (n == null)
+		    n = new Node<Integer>(x);
+  `     
+      else
+        temp2.setNext(new Node<Integer>(x));
+        temp2 = temp2.getNext();
+    }
+    temp1.insert(q2.remove());  
+  }
+
+   while(!temp1.isEmpty())
+    q2.insert(temp1.remove())
+
+
+  return temp2;
+}
+
+סיבוכיות
+לא ידוע מה גודלו של n
+n זהו גדולו של שרשרת החוליות
+הסיבוכיות היא o(n^2)
+
+
+
+
+
+
+
+
+
+
+
+
